@@ -31,9 +31,8 @@ public class MoverPlace : MonoBehaviour
     private void MoveToPlace()
     {
         Transform place = _places[_numberOfPlace];
-        Vector3 placeDirection = (place.transform.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(placeDirection);
-        transform.SetPositionAndRotation(Vector3.MoveTowards(transform.position, place.position, _speed * Time.deltaTime), Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * _speed));
+
+        transform.position = Vector3.MoveTowards(transform.position, place.position, _speed * Time.deltaTime);
 
         if (transform.position.IsEnoughClose(place.position))
         {
