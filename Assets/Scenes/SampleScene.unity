@@ -435,7 +435,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 829493214}
-  - component: {fileID: 829493210}
   - component: {fileID: 829493213}
   - component: {fileID: 829493212}
   - component: {fileID: 829493211}
@@ -446,18 +445,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &829493210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829493209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2f86f9ab412ed4f882ff630bc58e78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &829493211
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -730,7 +717,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26, y: 2, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -747,8 +734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e890c56496120244d84550c185727e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 829493210}
-  _bulletPrefab: {fileID: -6906544954968272272, guid: 7a945cecb92465a4199c59198682e700, type: 3}
+  _target: {fileID: 829493209}
+  _bulletPrefab: {fileID: 1543167305607854234, guid: 7a945cecb92465a4199c59198682e700, type: 3}
   _bulletSpeed: 30
   _shotPause: 0.5
 --- !u!1 &1592772441
