@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 
 public class Shooter : MonoBehaviour
 {
-    [SerializeField] private GameObject _target;
+    [SerializeField] private Transform _target;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private float _shotPause;
@@ -32,7 +32,7 @@ public class Shooter : MonoBehaviour
 
     private void ActionOnGet(Bullet obj)
     {
-        Vector3 direction = (_target.transform.position - transform.position).normalized;
+        Vector3 direction = (_target.position - transform.position).normalized;
 
         obj.SetVelocity(direction * _bulletSpeed);
         obj.gameObject.SetActive(true);

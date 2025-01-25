@@ -30,23 +30,19 @@ public class MoverPlace : MonoBehaviour
 
     private void MoveToPlace()
     {
-        Transform place = _places[_numberOfPlace];
+        Vector3 currentPlace = _places[_numberOfPlace].position;
 
-        transform.position = Vector3.MoveTowards(transform.position, place.position, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, currentPlace, _speed * Time.deltaTime);
+        transform.forward = currentPlace - transform.position;
 
-        if (transform.position.IsEnoughClose(place.position))
+        if (transform.position.IsEnoughClose(currentPlace))
         {
-            IncreaseNumberOfPlace();
-        }
-    }
+            _numberOfPlace++;
 
-    private void IncreaseNumberOfPlace()
-    {
-        _numberOfPlace++;
-
-        if (_numberOfPlace == _places.Length)
-        {
-            _numberOfPlace = 0;
+            if (_numberOfPlace == _places.Length)
+            {
+                _numberOfPlace = 0;
+            }
         }
     }
 }
